@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1525
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAT.MVC.EF", "SAT.MVC.EF\SAT.MVC.EF.csproj", "{79B3E031-A081-4BE0-81F3-CB6E0262B063}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1EAD8BEB-A415-41C3-8DF0-06DC61F5A527}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SAT.Data.EF", "..\SAT.Data.EF\SAT.Data.EF.csproj", "{B8C37523-DD14-45E3-A1DF-A778BD7219E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79B3E031-A081-4BE0-81F3-CB6E0262B063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79B3E031-A081-4BE0-81F3-CB6E0262B063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79B3E031-A081-4BE0-81F3-CB6E0262B063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79B3E031-A081-4BE0-81F3-CB6E0262B063}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C37523-DD14-45E3-A1DF-A778BD7219E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C37523-DD14-45E3-A1DF-A778BD7219E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C37523-DD14-45E3-A1DF-A778BD7219E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C37523-DD14-45E3-A1DF-A778BD7219E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43CA5EF2-55C4-4E4E-B4D3-522DF5CA25C2}
+	EndGlobalSection
+EndGlobal
