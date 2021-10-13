@@ -11,7 +11,7 @@ using System.Data.Entity;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace SAT.MVC.EF.Models
+namespace IdentitySample.Models
 {
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
 

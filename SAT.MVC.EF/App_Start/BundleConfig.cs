@@ -1,6 +1,6 @@
 ﻿using System.Web.Optimization;
 
-namespace SAT.MVC.EF
+namespace IdentitySample
 {
     public class BundleConfig
     {

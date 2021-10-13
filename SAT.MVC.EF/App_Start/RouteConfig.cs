@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace SAT.MVC.EF
+namespace IdentitySample
 {
     public class RouteConfig
     {

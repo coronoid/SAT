@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace SAT.MVC.EF.Models
+namespace IdentitySample.Models
 {
     public class RoleViewModel
     {

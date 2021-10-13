@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace SAT.MVC.EF
+namespace IdentitySample
 {
     public class FilterConfig
     {

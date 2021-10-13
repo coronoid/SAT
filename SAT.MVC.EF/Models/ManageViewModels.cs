@@ -3,7 +3,7 @@ using Microsoft.Owin.Security;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SAT.MVC.EF.Models
+namespace IdentitySample.Models
 {
     public class IndexViewModel
     {
