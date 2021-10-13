@@ -189,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
+    <Content Include="Content\assets\css\PagedList.css" />
     <Content Include="Content\assets\css\style.css" />
     <Content Include="Content\assets\img\about.jpg" />
     <Content Include="Content\assets\img\apple-touch-icon.png" />
