@@ -23,6 +23,13 @@ namespace SAT.UI.MVC.Controllers
             return View(students.ToList());
         }
 
+        // GET: Students/Tile
+        public ActionResult Tile()
+        {
+            var students = db.Students.Include(s => s.StudentStatus);
+            return View(students.ToList());
+        }
+
         // GET: Students/Details/5
         [Authorize(Roles = "Admin,Scheduling")]
         public ActionResult Details(int? id)
