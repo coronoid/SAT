@@ -1,20 +1,22 @@
 ﻿@{
-    ViewBag.Title = "Contact";
+    ViewBag.Title = "Contact Us";
 }
-<hgroup>
-    <h2>@ViewBag.Title.</h2>
-    <h3>@ViewBag.Message</h3>
-</hgroup>
-<div>
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
 
-    <address>
-        <i class="icon-envelope"></i><strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <i class="icon-envelope"></i><strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
+<h1 class="mt-4 text-center">@ViewBag.Title</h1>
+
+<div class="container mt-4">
+    <form action="ContactForm.php">
+
+        <label for="fname">Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Name">
+
+        <label for="lname">Email</label>
+        <input type="text" id="lname" name="lastname" placeholder="Email">
+
+        <label for="subject">Message</label>
+        <textarea id="subject" name="subject" placeholder="Message" style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+
+    </form>
 </div>
