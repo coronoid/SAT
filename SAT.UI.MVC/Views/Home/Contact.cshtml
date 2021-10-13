@@ -5,9 +5,39 @@
 <h1 class="mt-4 text-center">@ViewBag.Title</h1>
 
 <div class="container mt-4">
-    <form action="ContactForm.php">
-
-        <label for="fname">Name</label>
+    <form action="#">
+        <center>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="fname">Name:</label><br />
+                            <input type="text" id="fname" name="firstname" placeholder="Ypur Name" style="width: 350px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="lname">Email:</label><br />
+                            <input type="text" id="lname" name="lastname" placeholder="Your Email" style="width: 350px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="subject">Message:</label><br />
+                            <textarea id="subject" name="subject" placeholder="Your Message" style="height:150px; width:350px;"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <center>
+                                <input class="btn btn-dark" type="submit" value="Submit" style="width: 150px;">
+                            </center>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        @*<label for="fname">Name</label>
         <input type="text" id="fname" name="firstname" placeholder="Name">
 
         <label for="lname">Email</label>
@@ -16,7 +46,7 @@
         <label for="subject">Message</label>
         <textarea id="subject" name="subject" placeholder="Message" style="height:200px"></textarea>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit">*@
 
     </form>
 </div>
