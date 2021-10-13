@@ -90,10 +90,14 @@
                 @if (User.IsInRole("Admin"))
                 {
                     @Html.ActionLink("Edit", "Edit", new { id = item.StudentId })
+
+                }|
+                @if (User.IsInRole("Admin"))
+                {
                     @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+
                 }
-             
-                @Html.ActionLink("Details", "Details", new { id = item.StudentId })
+                | @Html.ActionLink("Details", "Details", new { id = item.StudentId })
 
             </td>
         </tr>
