@@ -47,16 +47,23 @@
             @Html.DisplayFor(modelItem => item.Location)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Cours.CourseName)
+            @*@Html.DisplayFor(modelItem => item.Cours.CourseName)*@
+            @Html.ActionLink(item.Cours.CourseName, "Details", new { id = item.ScheduledClassId })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ScheduledClassStatus.SCSName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ScheduledClassId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ScheduledClassId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ScheduledClassId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ScheduledClassId }) |
+            @*@Html.ActionLink("Details", "Details", new { id = item.ScheduledClassId }) |*@
+
+            @if (User.IsInRole("Admin"))
+            {
+                @Html.ActionLink("Delete", "Delete", new { id = item.ScheduledClassId })
+            }
+
         </td>
+        
     </tr>
 }
 

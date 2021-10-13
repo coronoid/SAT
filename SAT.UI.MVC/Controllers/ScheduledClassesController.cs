@@ -10,11 +10,13 @@ using SAT.DATA.EF;
 
 namespace SAT.UI.MVC.Controllers
 {
+    [Authorize]
     public class ScheduledClassesController : Controller
     {
         private SATEntities db = new SATEntities();
 
         // GET: ScheduledClasses
+        [Authorize(Roles = "Admin,Scheduling")]
         public ActionResult Index()
         {
             var scheduledClasses = db.ScheduledClasses.Include(s => s.Cours).Include(s => s.ScheduledClassStatus);
@@ -22,6 +24,7 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Details/5
+        [Authorize(Roles = "Admin,Scheduling")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +40,7 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Create
+        [Authorize(Roles = "Admin,Scheduling")]
         public ActionResult Create()
         {
             ViewBag.CourseId = new SelectList(db.Courses, "CourseId", "CourseName");
@@ -64,6 +68,7 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Edit/5
+        [Authorize(Roles = "Admin,Scheduling")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,6 +104,7 @@ namespace SAT.UI.MVC.Controllers
         }
 
         // GET: ScheduledClasses/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

@@ -35,7 +35,8 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CourseName)
+            @*@Html.DisplayFor(modelItem => item.CourseName)*@
+            @Html.ActionLink(item.CourseName, "Details", new { id = item.CourseName })
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CourseDescription)
@@ -54,7 +55,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CourseId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CourseId }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.CourseId }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.CourseId })
         </td>
     </tr>
