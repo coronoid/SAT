@@ -16,11 +16,29 @@ namespace SAT.UI.MVC.Controllers
         private SATEntities db = new SATEntities();
 
         // GET: Cours
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View(db.Courses.ToList());
-        }
+            if (id == null || id == 0)
+            {
+                var courses = (from c in db.Courses
+                               where c.IsActive
+                               select c).ToList();
 
+                return View(courses);
+            }
+            else
+            {
+                var courses = (from c in db.Courses
+                               where !c.IsActive
+                               select c).ToList();
+
+                return View(courses);
+            }
+            
+            
+            //return View(db.Courses.ToList());
+        }
+                
         // GET: Cours/Details/5
         public ActionResult Details(int? id)
         {
