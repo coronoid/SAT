@@ -26,11 +26,12 @@
             @Html.DisplayFor(modelItem => item.SSName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SSDescription)
+            @*@Html.DisplayFor(modelItem => item.SSDescription)*@
+            @Html.ActionLink(item.SSDescription, "Details", new { id = item.SSDescription })
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.SSID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SSID }) |
+            @*@Html.ActionLink("Details", "Details", new { id=item.SSID }) |*@
             @Html.ActionLink("Delete", "Delete", new { id=item.SSID })
         </td>
     </tr>

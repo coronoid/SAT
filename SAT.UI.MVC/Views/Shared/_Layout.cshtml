@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -64,20 +66,7 @@
 
             <nav id="navbar" class="navbar">
                 <ul>
-                    @*<div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 
-                            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                            {
-                                <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-                                <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
-                            }
-                        </ul>
-                        @Html.Partial("_LoginPartial")
-                    </div>*@
 
 
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -85,14 +74,17 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 
                     @*<li>@Html.ActionLink("Account", "Index", "Account")</li>*@
-                    <li>@Html.ActionLink("Course", "Index", "Cours")</li>
-                    <li>@Html.ActionLink("Enrollments", "Index", "Enrollments")</li>
-                    <li>@Html.ActionLink("ScheduledClasses", "Index", "ScheduledClasses")</li>
-                    <li>@Html.ActionLink("Students", "Index", "Students")</li>
-                    <li>@Html.ActionLink("StudentStatus", "Index", "StudentStatus")</li>
+                    @if (Request.IsAuthenticated && (User.IsInRole("Scheduling") || User.IsInRole("Admin")))
+                    {
+                        <li>@Html.ActionLink("Enrollments", "Index", "Enrollments")</li>
+                        <li>@Html.ActionLink("ScheduledClasses", "Index", "ScheduledClasses")</li>
+                        <li>@Html.ActionLink("Students", "Index", "Students")</li>
+                    }
 
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
+                        <li>@Html.ActionLink("Course", "Index", "Cours")</li>
+                        <li>@Html.ActionLink("StudentStatus", "Index", "StudentStatus")</li>
                         <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
                         <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
                     }
