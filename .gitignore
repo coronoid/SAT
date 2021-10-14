@@ -351,3 +351,4 @@ MigrationBackup/
 
 # Prevent Sensitive data from being submitted
 /SAT.MVC.EF/configs
+/SAT.UI.MVC/Content/assets/img/Student
