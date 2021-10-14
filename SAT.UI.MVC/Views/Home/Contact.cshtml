@@ -1,52 +1,78 @@
-﻿@{
+﻿@model SAT.UI.MVC.Models.ContactViewModel
+
+@{
     ViewBag.Title = "Contact Us";
 }
 
-<h1 class="mt-4 text-center">@ViewBag.Title</h1>
+<div class="container-fluid p-0">
+    <section class="resume-section" id="experience">
+        <div class="resume-section-content">
+            <h2 class="mb-5 textShadow text-center">Get In Contact With Me</h2>
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="flex-grow-1">
+                    <h4 class="mb-0 text-center">
+                        <span class="text-center" id="messageBack" style="font-weight: bold; color: darkgreen">
+                            @ViewBag.SuccessMessage
+                        </span>
+                    </h4>
+                    <div class="subheading mb-3 classMemberName textShadow"></div>
+                    <p class="classMemberBio textShadow">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            <table align="center">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 4px">
+                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Name", size = "27" } })
+                                        </td>
+                                        <td style="padding: 5px">
+                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Email", size = "27" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px">
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger contactFormErrorBold" })
+                                        </td>
+                                        <td style="padding: 5px">
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger contactFormErrorBold" })
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-<div class="container mt-4">
-    <form action="#">
-        <center>
-            <table>
-                <tbody>
-                    <tr>
-                        <td>
-                            <label for="fname">Name:</label><br />
-                            <input type="text" id="fname" name="firstname" placeholder="Your Name" style="width: 350px;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="lname">Email:</label><br />
-                            <input type="text" id="lname" name="lastname" placeholder="Your Email" style="width: 350px;">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="subject">Message:</label><br />
-                            <textarea id="subject" name="subject" placeholder="Your Message" style="height:150px; width:350px;"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <center>
-                                <input class="btn btn-dark" type="submit" value="Submit" style="width: 150px;">
-                            </center>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </center>
-        @*<label for="fname">Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Name">
-
-        <label for="lname">Email</label>
-        <input type="text" id="lname" name="lastname" placeholder="Email">
-
-        <label for="subject">Message</label>
-        <textarea id="subject" name="subject" placeholder="Message" style="height:200px"></textarea>
-
-        <input type="submit" value="Submit">*@
-
-    </form>
+                            <table align="center">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 5px">
+                                            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", placeholder = "Message", rows = "5", cols = "60" } })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 5px">
+                                            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger contactFormErrorBold" })
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table align="center">
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 7px">
+                                            <input type="submit" class="btn-outline-dark" value="Send" style="width: 250px" />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        }
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <h4>@Html.Raw(ViewBag.ErrorMessage)</h4>
+}
