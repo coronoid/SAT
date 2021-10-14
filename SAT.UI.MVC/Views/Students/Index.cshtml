@@ -13,61 +13,73 @@
     </p>
 }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.fullName)
-        </th>        
-        <th>
-            @Html.DisplayNameFor(model => model.Major)
-        </th>        
-        <th>
-            @Html.DisplayNameFor(model => model.Phone)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StudentStatus.SSName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhotoUrl)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<table class="table data-table table-striped">
+    <thead>
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.fullName)
-            </td>            
-            <td>
-                @Html.DisplayFor(modelItem => item.Major)
-            </td>            
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>            
-            <td>
-                @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
-            </td>
-            <td>
-                <img src="~/Content/assets/img/Student/@item.PhotoUrl" alt="@item.fullName cover image" style="max-height:100px; width:auto;" />
-            </td>
-            <td>
-                @if (User.IsInRole("Admin"))
-                {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) @: |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentId }) @: |
-                }
-             
-                @Html.ActionLink("Details", "Details", new { id = item.StudentId })
-
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.fullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Major)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentStatus.SSName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhotoUrl)
+            </th>
+            <th></th>
         </tr>
-    }
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Major)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
+                </td>
+                <td>
+                    <img class="img-responsive thumb" src="~/Content/assets/img/Student/@item.PhotoUrl" alt="@item.fullName cover image" style="width: 100px; height: 100px;" />
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) @: |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.StudentId }) @: |
+                    }
 
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentId })
+
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('.data-table').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+}
