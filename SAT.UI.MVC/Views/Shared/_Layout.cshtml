@@ -102,8 +102,8 @@
 
                             @*<ul class="nav navbar-nav navbar-right">*@
                             @*<li>
-                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-                </li>*@
+                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                </li>*@
                             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
                             @*</ul>*@
                         }
@@ -149,9 +149,17 @@
 
         </div>
     </header><!-- End Header -->
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative">
+            <h1>Welcome to Day</h1>
+            <h2>We are team of talented designers making websites with Bootstrap<br/> Ashley, Corey, and Bill</h2>
+            
+        </div>
+    </section><!-- End Hero -->
 
-    <main id="main" style="padding-left:25px; padding-right:25px;">        
-            @RenderBody()        
+    <main id="main" style="padding-left:25px; padding-right:25px;">
+        @RenderBody()
     </main>
 
     <!-- ======= Footer ======= -->
