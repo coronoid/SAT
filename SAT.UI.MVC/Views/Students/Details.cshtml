@@ -87,7 +87,10 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PhotoUrl)
+            @*@Html.DisplayFor(model => model.PhotoUrl)*@
+            <label for="PhotoUrl">
+                <img src="~/Content/assets/img/Student/@Model.PhotoUrl" style="max-height:100px;" alt="@Model.FirstName cover image" id="img">
+            </label>
         </dd>
 
         <dt>
