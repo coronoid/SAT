@@ -30,6 +30,9 @@
         <th>
             @Html.DisplayNameFor(model => model.StudentStatus.SSName)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhotoUrl)
+        </th>
         <th></th>
     </tr>
 
@@ -50,6 +53,9 @@
             </td>            
             <td>
                 @Html.DisplayFor(modelItem => item.StudentStatus.SSName)
+            </td>
+            <td>
+                <img src="~/Content/assets/img/Student/@item.PhotoUrl" alt="@item.fullName cover image" style="max-height:100px; width:auto;" />
             </td>
             <td>
                 @if (User.IsInRole("Admin"))
