@@ -201,6 +201,7 @@
     <Content Include="Content\assets\img\cta-bg.jpg" />
     <Content Include="Content\assets\img\favicon.png" />
     <Content Include="Content\assets\img\hero-bg.jpg" />
+    <Content Include="Content\assets\img\noimage.png" />
     <Content Include="Content\assets\img\portfolio\portfolio-1.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-2.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-3.jpg" />
@@ -491,6 +492,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\assets\img\Student\" />
     <Folder Include="Content\StudentImages\" />
   </ItemGroup>
   <ItemGroup>
