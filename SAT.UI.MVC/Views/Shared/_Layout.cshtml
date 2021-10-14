@@ -74,10 +74,8 @@
             <nav id="navbar" class="navbar">
                 <ul>
 
-
-
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 
                     @*<li>@Html.ActionLink("Account", "Index", "Account")</li>*@
@@ -94,6 +92,28 @@
                         <li>@Html.ActionLink("StudentStatus", "Index", "StudentStatus")</li>
                         <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
                         <li>@Html.ActionLink("UsersAdmin", "Index", "UsersAdmin")</li>
+                    }
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            @*<ul class="nav navbar-nav navbar-right">*@
+                            @*<li>
+                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>*@
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                            @*</ul>*@
+                        }
+                    }
+                    else
+                    {
+                        @*<ul class="nav navbar-nav navbar-right dropdown">*@
+                        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                        @*</ul>*@
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
