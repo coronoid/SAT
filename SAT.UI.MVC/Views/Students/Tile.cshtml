@@ -7,11 +7,13 @@
 <h2 class="textShadow">@ViewBag.Title</h2>
 
 <a href=@Url.Action("Index", "Students") class="btn btn-dark" style="width: 120px; float: right;">List View</a>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
 
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
 <div class="container mt-5">
     <div class="row">
@@ -24,9 +26,17 @@
                     <h4 class="text-center textShadow">@Html.DisplayFor(modelItem => item.Major)</h4>
                     <p class="text-center textShadow">@Html.DisplayFor(modelItem => item.StudentStatus.SSName)</p>
                     <p class="text-center">
-                        @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                        @if (User.IsInRole("Admin"))
+                        {
+                            @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) @: |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.StudentId }) @: |
+                        }
+
+                        @Html.ActionLink("Details", "Details", new { id = item.StudentId })
+
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
                         @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })*@
                     </p>
                 </div>
             </div>

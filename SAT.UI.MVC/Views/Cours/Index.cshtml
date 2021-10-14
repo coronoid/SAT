@@ -39,7 +39,7 @@
             <tr>
                 <td>
                     @*@Html.DisplayFor(modelItem => item.CourseName)*@
-                    @Html.ActionLink(item.CourseName, "Details", new { id = item.CourseName })
+                    @Html.ActionLink(item.CourseDescription, "Details", new { id = item.CourseId })
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.CourseDescription)
