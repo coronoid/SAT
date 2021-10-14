@@ -215,6 +215,19 @@
     <Content Include="Content\assets\img\portfolio\portfolio-details-1.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-details-2.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-details-3.jpg" />
+    <Content Include="Content\assets\img\Student\1.jpg" />
+    <Content Include="Content\assets\img\Student\2.jpg" />
+    <Content Include="Content\assets\img\Student\3.jpg" />
+    <Content Include="Content\assets\img\Student\4.jpg" />
+    <Content Include="Content\assets\img\Student\5.jpg" />
+    <Content Include="Content\assets\img\Student\EC-TimW-cropped.jpg" />
+    <Content Include="Content\assets\img\Student\ed18985e-a6c5-4df5-bf1a-9cd1690be18c.png" />
+    <Content Include="Content\assets\img\Student\manpic.jpg" />
+    <Content Include="Content\assets\img\Student\mmo2ho5w3p4.jpg" />
+    <Content Include="Content\assets\img\Student\noimage.png" />
+    <Content Include="Content\assets\img\Student\Professional-Headshots-Philadelphia-11.jpg" />
+    <Content Include="Content\assets\img\Student\professional-louisville-business-headshots-nashville-15.jpg" />
+    <Content Include="Content\assets\img\Student\profile.jpg" />
     <Content Include="Content\assets\img\team\team-1.jpg" />
     <Content Include="Content\assets\img\team\team-2.jpg" />
     <Content Include="Content\assets\img\team\team-3.jpg" />
@@ -493,7 +506,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\assets\img\Student\" />
     <Folder Include="Content\StudentImages\" />
   </ItemGroup>
   <ItemGroup>
