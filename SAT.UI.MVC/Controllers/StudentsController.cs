@@ -80,7 +80,7 @@ namespace SAT.UI.MVC.Controllers
                     {
                         imageName = Guid.NewGuid() + ext;
 
-                        PhotoUrl.SaveAs(Server.MapPath("~/Content/assets/img/Student/"));
+                        PhotoUrl.SaveAs(Server.MapPath("~/Content/assets/img/Student/" + imageName));
 
                     }
                     else
@@ -148,7 +148,7 @@ namespace SAT.UI.MVC.Controllers
 
                         if (student.PhotoUrl != "noImage.png" && student.PhotoUrl != null)
                         {
-                            System.IO.File.Delete(Server.MapPath("~/Content/assets/img/Student/" + imageName));
+                            System.IO.File.Delete(Server.MapPath("~/Content/assets/img/Student/" + student.PhotoUrl));
                         }
 
                     }
