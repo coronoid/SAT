@@ -1,15 +1,16 @@
 ﻿@model IEnumerable<SAT.DATA.EF.Cours>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Courses";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table data-table table-striped">
+    <thead>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.CourseName)
@@ -29,38 +30,50 @@
         <th>
             @Html.DisplayNameFor(model => model.IsActive)
         </th>
-        <th></th>
+        <th>Action</th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @*@Html.DisplayFor(modelItem => item.CourseName)*@
-            @Html.ActionLink(item.CourseName, "Details", new { id = item.CourseName })
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreditHours)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Curriculum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Notes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsActive)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.CourseId }) <br />
-            (@Html.ActionLink("Retired", "Index", new { id = item.CourseId }) |
-            @Html.ActionLink("Active", "Index", new { id = 0 }))
-        </td>
-    </tr>
-}
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.CourseName)*@
+                    @Html.ActionLink(item.CourseName, "Details", new { id = item.CourseName })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CourseDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreditHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Curriculum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseId }) |
+                    @Html.ActionLink("Retired", "Index", new { id = item.CourseId }) |
+                    @Html.ActionLink("Active", "Index", new { id = 0 })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('.data-table').DataTable({
+                responsive: true
+            });
+        });
+    </script>
+}

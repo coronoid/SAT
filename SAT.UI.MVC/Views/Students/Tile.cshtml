@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SAT.DATA.EF.Student>
+
+@{
+    ViewBag.Title = "Student Tile View";
+}
+
+<h2 class="textShadow">@ViewBag.Title</h2>
+
+<a href=@Url.Action("Index", "Students") class="btn btn-dark" style="width: 120px; float: right;">List View</a>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="container mt-5">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card boxShadow" style="max-width: 300px; margin: 0 auto 10px auto;">
+                    <img class="img-responsive thumb" src="~/Content/assets/img/Student/t_@item.PhotoUrl" alt="@item.FirstName" style="display: block; margin: 10px auto;" />
+                    <h2 class="text-center textShadow">@Html.DisplayFor(modelItem => item.FirstName) <br /> @Html.DisplayFor(modelItem => item.LastName)</h2>
+                    <h4 class="text-center textShadow">@Html.DisplayFor(modelItem => item.Major)</h4>
+                    <p class="text-center textShadow">@Html.DisplayFor(modelItem => item.StudentStatus.SSName)</p>
+                    <p class="text-center">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.StudentId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.StudentId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.StudentId })
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
