@@ -215,6 +215,21 @@
     <Content Include="Content\assets\img\portfolio\portfolio-details-1.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-details-2.jpg" />
     <Content Include="Content\assets\img\portfolio\portfolio-details-3.jpg" />
+    <Content Include="Content\assets\img\Student\0a4b27fa2cc7ba514d8e8d007fb4d24f.jpg" />
+    <Content Include="Content\assets\img\Student\2541633-orig_orig.jpg" />
+    <Content Include="Content\assets\img\Student\87044446_1055305214838625_4386451117312049152_n.jpg" />
+    <Content Include="Content\assets\img\Student\best-business-photographers-081677-207x300.jpg" />
+    <Content Include="Content\assets\img\Student\bruce-bowen-head-shot-2x.jpg" />
+    <Content Include="Content\assets\img\Student\Dawn-Cunningham.jpg" />
+    <Content Include="Content\assets\img\Student\EC-TimW-cropped.jpg" />
+    <Content Include="Content\assets\img\Student\freehold-nj-headshot.jpg" />
+    <Content Include="Content\assets\img\Student\headshot-woman-outdoors.jpg" />
+    <Content Include="Content\assets\img\Student\IS_JC_0201_0375-scaled.jpg" />
+    <Content Include="Content\assets\img\Student\manpic.jpg" />
+    <Content Include="Content\assets\img\Student\mmo2ho5w3p4.jpg" />
+    <Content Include="Content\assets\img\Student\noimage.png" />
+    <Content Include="Content\assets\img\Student\Professional-Headshots-Philadelphia-11.jpg" />
+    <Content Include="Content\assets\img\Student\professional-louisville-business-headshots-nashville-15.jpg" />
     <Content Include="Content\assets\img\team\team-1.jpg" />
     <Content Include="Content\assets\img\team\team-2.jpg" />
     <Content Include="Content\assets\img\team\team-3.jpg" />
@@ -493,7 +508,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\assets\img\Student\" />
     <Folder Include="Content\StudentImages\" />
   </ItemGroup>
   <ItemGroup>
